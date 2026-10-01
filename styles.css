@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Spacebun";
+  src: url("src/Spacebun_v1_4-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Spacebun", "Arial Rounded MT Bold", Arial, sans-serif;
+  color: #111111;
+  background: #ffffff;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at 14% 24%, rgb(255 238 122 / 20%) 0 9rem, transparent 9.1rem),
+    radial-gradient(circle at 88% 82%, rgb(121 246 109 / 16%) 0 11rem, transparent 11.1rem),
+    #ffffff;
+}
+
+main {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.hero {
+  width: min(100%, 76rem);
+  text-align: center;
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.message {
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem, 2.8vw, 2.35rem);
+  line-height: 1.15;
+}
+
+p span {
+  color: #099447;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding: 0.9rem 1.35rem 0.8rem;
+  border: 3px solid #111111;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #111111;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 5px 5px 0 #ff7990;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.social-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #ff7990;
+}
+
+.social-link:focus-visible {
+  outline: 4px solid #73ebff;
+  outline-offset: 5px;
+}
+
+.social-link svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .banner {
+    width: 125%;
+    max-width: none;
+    margin-left: -12.5%;
+  }
+
+  .mobile-break {
+    display: initial;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link {
+    transition: none;
+  }
+}
