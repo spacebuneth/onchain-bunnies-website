@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Spacebun";
-  src: url("src/Spacebun_v1_4-Regular.ttf") format("truetype");
+  src: url("src/Spacebun_v1_3-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -23,10 +23,36 @@ body {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at 14% 24%, rgb(255 238 122 / 20%) 0 9rem, transparent 9.1rem),
-    radial-gradient(circle at 88% 82%, rgb(121 246 109 / 16%) 0 11rem, transparent 11.1rem),
+    radial-gradient(circle at 7% 12%, rgb(255 238 122 / 28%) 0 1.4rem, transparent 1.5rem),
+    radial-gradient(circle at 20% 76%, rgb(115 235 255 / 22%) 0 4.7rem, transparent 4.8rem),
+    radial-gradient(circle at 33% 17%, rgb(255 121 144 / 18%) 0 2.2rem, transparent 2.3rem),
+    radial-gradient(circle at 49% 88%, rgb(121 246 109 / 20%) 0 3.2rem, transparent 3.3rem),
+    radial-gradient(circle at 63% 8%, rgb(194 153 255 / 20%) 0 5.5rem, transparent 5.6rem),
+    radial-gradient(circle at 76% 57%, rgb(255 238 122 / 24%) 0 1.8rem, transparent 1.9rem),
+    radial-gradient(circle at 91% 22%, rgb(115 235 255 / 24%) 0 3.5rem, transparent 3.6rem),
+    radial-gradient(circle at 92% 86%, rgb(255 121 144 / 17%) 0 6rem, transparent 6.1rem),
     #ffffff;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 47%, #79f66d 0 0.55rem, transparent 0.65rem),
+    radial-gradient(circle at 27% 94%, #ffee7a 0 0.8rem, transparent 0.9rem),
+    radial-gradient(circle at 39% 54%, #73ebff 0 0.45rem, transparent 0.55rem),
+    radial-gradient(circle at 56% 31%, #ff7990 0 0.7rem, transparent 0.8rem),
+    radial-gradient(circle at 69% 77%, #c299ff 0 1rem, transparent 1.1rem),
+    radial-gradient(circle at 83% 42%, #79f66d 0 0.4rem, transparent 0.5rem),
+    radial-gradient(circle at 97% 61%, #ffee7a 0 0.75rem, transparent 0.85rem),
+    radial-gradient(circle at 3% 88%, #ff7990 0 0.5rem, transparent 0.6rem);
+  opacity: 0.42;
 }
 
 main {
@@ -41,11 +67,22 @@ main {
   text-align: center;
 }
 
+.banner-frame {
+  width: 100%;
+  padding: clamp(4px, 0.6vw, 8px);
+  border: 3px solid #111111;
+  border-radius: clamp(1rem, 2vw, 1.75rem);
+  background: linear-gradient(90deg, #ffee7a, #73ebff, #79f66d, #ff7990, #c299ff);
+  box-shadow: 8px 8px 0 rgb(17 17 17 / 10%);
+  overflow: hidden;
+}
+
 .banner {
   display: block;
   width: 100%;
   height: auto;
   margin-inline: auto;
+  border-radius: calc(clamp(1rem, 2vw, 1.75rem) - 8px);
   object-fit: contain;
 }
 
@@ -117,7 +154,7 @@ p span {
     padding: 1rem 1rem 2rem;
   }
 
-  .banner {
+  .banner-frame {
     width: 125%;
     max-width: none;
     margin-left: -12.5%;
